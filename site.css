@@ -451,6 +451,33 @@ tr:last-child td {
   margin: 1.6rem 0 1.8rem;
 }
 
+@media (min-width: 860px) {
+  .plates.coins {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .plates.coins .plate:first-child {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
+  }
+}
+
+.plates.coins img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.plate-credit {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .plate img {
   display: block;
   width: 100%;

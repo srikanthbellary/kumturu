@@ -255,6 +255,22 @@ The stupa may have been founded in the third century BCE, in the time of Asoka, 
 
 Nineteenth-century writing often treated the whole sculptural life of Amaravati as “Satavahana.” Later work has given a clearer place to a local coastal house whose names end in *-sada*. The Sadas may have begun to rule around 20 BCE, perhaps as tributaries of the Mahameghavahana line of Kalinga. Their capital was probably Dhanyakataka; the stupa stood just outside the city. The Velpuru pillar, at the Ramalingesvara temple, names Maha Sada / Maharaja Siri Sada. Excavations at Vaddamanu, east of Amaravati, yielded coins with legends ending in *-Sada*.
 
+<div class="plates coins">
+<figure class="plate">
+  <img src="media/coin-maha-sada.jpg" alt="Two faces of a square-ish lead coin of Maha Sada from Vaddamanu, with an animal and Brahmi letters." width="347" height="182">
+  <figcaption>Maha Sada, 35.5g, Vaddamanu excavations (BACRI / Kasturi Bai).</figcaption>
+</figure>
+<figure class="plate">
+  <img src="media/coin-siri-sada.jpg" alt="Two faces of a small lead coin of Siri Sada, with a worn animal on one side." width="342" height="163">
+  <figcaption>Siri Sada, 3.7g, collection of Dr T. Devendra Rao.</figcaption>
+</figure>
+<figure class="plate">
+  <img src="media/coin-asaka-sada.jpg" alt="Two faces of a lead coin of Asaka Sada, lion and Brahmi on one side, British Museum 1908,0912.3." width="358" height="189">
+  <figcaption>Asaka Sada, 9.9g, British Museum 1908,0912.3.</figcaption>
+</figure>
+<p class="plate-credit">Sada coins: Vaddamanu excavations (BACRI) and British Museum; photographs as published by Shailendra Bhandare, 2016.</p>
+</div>
+
 The official dynasty list for Guntur begins, after Bhattiprolu, with the Satavahanas. A pillar found while repairing the Bheemeswara temple at **Chebrolu** was issued by Satavahana king **Vijaya** in his fifth regnal year, dated by ASI Epigraphy to **207 CE**. It is in Sanskrit, in Brahmi characters. A person named Kartika built a *prasada* and a *mandapa*, and consecrated images on the southern side of the temple of Bhagavati Saktimatruka at **Tambrape** — “Tambrape being the ancient name of Chebrolou.” ASI has called this the earliest datable Sanskrit inscription from South India so far.
 
 The same site also yielded a first-century CE Prakrit inscription recording the gift of a cloister *mandapa* and *chaitya* — the earliest epigraphic reference to *mutts* noted in that briefing.
@@ -628,6 +644,7 @@ Credit, first: the **Archaeological Survey of India** (Director, Epigraphy: K. M
 - Akira Shimada, “Bhattiprolu,” *Encyclopedia of Ancient History* (2021). https://doi.org/10.1002/9781119399919.eahaa00007
 - Akira Shimada, “Nagarjunakonda,” *Encyclopedia of Ancient History* (2021). https://doi.org/10.1002/9781119399919.eahaa00008
 - Akira Shimada and Michael Willis (eds.), *Amaravati: The Art of an Early Buddhist Monument in Context*. https://doi.org/10.5281/zenodo.3886508
+- Shailendra Bhandare, “Money and the Monuments: Coins of the Sada Dynasty of the Coastal Andhra Region,” in Shimada & Willis (eds.), *Amaravati* (British Museum, 2016), 37–45. https://ora.ox.ac.uk/objects/uuid:cee284bc-96cb-4213-b390-8b7cdab71856
 - Shailen Bhandare, “Money and the Monuments: Coins of the Sada Dynasty of the Coastal Andhra Region.” https://www.academia.edu/31444203/Money_and_the_Monuments_Coins_of_the_Sada_Dynasty_of_the_Coastal_Andhra_Region
 - Vincent Tournier, “Kings as patrons of monasteries and stupas in Early Andhra.” https://isidore.science/document/10670/1.132e9b97a6e4f2fc082957422146b4c835a862db
 - “Lower Krishna Valley (2): Bhattiprolu,” Wisdom Library. https://www.wisdomlib.org/history/essay/amaravati-art-study/d/doc1147069.html

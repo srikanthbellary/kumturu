@@ -64,6 +64,7 @@ Credit, first: the **Archaeological Survey of India** (Director, Epigraphy: K. M
 - Akira Shimada, “Bhattiprolu,” *Encyclopedia of Ancient History* (2021). https://doi.org/10.1002/9781119399919.eahaa00007
 - Akira Shimada, “Nagarjunakonda,” *Encyclopedia of Ancient History* (2021). https://doi.org/10.1002/9781119399919.eahaa00008
 - Akira Shimada and Michael Willis (eds.), *Amaravati: The Art of an Early Buddhist Monument in Context*. https://doi.org/10.5281/zenodo.3886508
+- Shailendra Bhandare, “Money and the Monuments: Coins of the Sada Dynasty of the Coastal Andhra Region,” in Shimada & Willis (eds.), *Amaravati* (British Museum, 2016), 37–45. https://ora.ox.ac.uk/objects/uuid:cee284bc-96cb-4213-b390-8b7cdab71856
 - Shailen Bhandare, “Money and the Monuments: Coins of the Sada Dynasty of the Coastal Andhra Region.” https://www.academia.edu/31444203/Money_and_the_Monuments_Coins_of_the_Sada_Dynasty_of_the_Coastal_Andhra_Region
 - Vincent Tournier, “Kings as patrons of monasteries and stupas in Early Andhra.” https://isidore.science/document/10670/1.132e9b97a6e4f2fc082957422146b4c835a862db
 - “Lower Krishna Valley (2): Bhattiprolu,” Wisdom Library. https://www.wisdomlib.org/history/essay/amaravati-art-study/d/doc1147069.html
