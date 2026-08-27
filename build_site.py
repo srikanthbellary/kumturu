@@ -11,14 +11,14 @@ ROOT = Path(__file__).resolve().parent
 COPY = ROOT / "copy"
 
 NAV = [
-    ("index.html", "Home"),
-    ("the-name.html", "The name"),
-    ("timeline.html", "Timeline"),
-    ("ancient.html", "Ancient"),
-    ("medieval.html", "Medieval"),
-    ("independence.html", "To Independence"),
-    ("places.html", "Places"),
-    ("sources.html", "Sources"),
+    ("index.html", "Home", "nav.home"),
+    ("the-name.html", "The name", "nav.name"),
+    ("timeline.html", "Timeline", "nav.timeline"),
+    ("ancient.html", "Ancient", "nav.ancient"),
+    ("medieval.html", "Medieval", "nav.medieval"),
+    ("independence.html", "To Independence", "nav.independence"),
+    ("places.html", "Places", "nav.places"),
+    ("sources.html", "Sources", "nav.sources"),
 ]
 
 PAGES = {
@@ -308,30 +308,35 @@ def wrap_places(body: str) -> str:
 
 def header(current: str) -> str:
     items = []
-    for href, label in NAV:
+    for href, label, key in NAV:
         cur = ' aria-current="page"' if href == current else ""
-        items.append(f'<li><a href="{href}"{cur}>{label}</a></li>')
+        items.append(f'<li><a href="{href}"{cur} data-i18n="{key}">{label}</a></li>')
     nav = "\n          ".join(items)
     return f"""<header class="masthead">
   <div class="masthead-inner">
     <div class="brand">
       <a class="brand-name" href="index.html">Kumturu</a>
-      <span class="brand-tag">A public history of Guntur</span>
+      <span class="brand-tag" data-i18n="brand.tag">A public history of Guntur</span>
     </div>
     <nav aria-label="Site">
       <ul class="site-nav">
           {nav}
       </ul>
     </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-current" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" class="lang-btn" data-lang="te" aria-pressed="false" title="Telugu not yet available" aria-description="Telugu not yet available">తెలుగు</button>
+    </div>
+    <p class="lang-note" hidden>Telugu is being written. This site is in English for now.</p>
   </div>
 </header>"""
 
 
 def footer(current: str) -> str:
     items = []
-    for href, label in NAV:
+    for href, label, key in NAV:
         cur = ' aria-current="page"' if href == current else ""
-        items.append(f'<li><a href="{href}"{cur}>{label}</a></li>')
+        items.append(f'<li><a href="{href}"{cur} data-i18n="{key}">{label}</a></li>')
     nav = "\n        ".join(items)
     return f"""<footer class="colophon">
   <div class="colophon-inner">
@@ -340,8 +345,8 @@ def footer(current: str) -> str:
         {nav}
       </ul>
     </nav>
-    <p>The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
-    <p>kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
+    <p data-i18n="footer.stop">The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
+    <p data-i18n="footer.credit">kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
   </div>
 </footer>"""
 
@@ -380,7 +385,7 @@ def page_shell(meta: dict, body: str, extra_class: str = "") -> str:
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <a class="skip" href="#content">Skip to the history</a>
+  <a class="skip" href="#content" data-i18n="skip">Skip to the history</a>
   {header(current)}
   <main id="content" class="{wrap_cls}">
     {hero}
@@ -389,6 +394,7 @@ def page_shell(meta: dict, body: str, extra_class: str = "") -> str:
     </div>
   </main>
   {footer(current)}
+  <script src="js/i18n.js"></script>
   <script>
     document.querySelectorAll(".film-frame video").forEach(function (video) {{
       var hide = function () {{ video.classList.remove("is-ready"); }};

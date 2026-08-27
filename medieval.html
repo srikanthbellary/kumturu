@@ -9,25 +9,30 @@
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <a class="skip" href="#content">Skip to the history</a>
+  <a class="skip" href="#content" data-i18n="skip">Skip to the history</a>
   <header class="masthead">
   <div class="masthead-inner">
     <div class="brand">
       <a class="brand-name" href="index.html">Kumturu</a>
-      <span class="brand-tag">A public history of Guntur</span>
+      <span class="brand-tag" data-i18n="brand.tag">A public history of Guntur</span>
     </div>
     <nav aria-label="Site">
       <ul class="site-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="the-name.html">The name</a></li>
-          <li><a href="timeline.html">Timeline</a></li>
-          <li><a href="ancient.html">Ancient</a></li>
-          <li><a href="medieval.html" aria-current="page">Medieval</a></li>
-          <li><a href="independence.html">To Independence</a></li>
-          <li><a href="places.html">Places</a></li>
-          <li><a href="sources.html">Sources</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="the-name.html" data-i18n="nav.name">The name</a></li>
+          <li><a href="timeline.html" data-i18n="nav.timeline">Timeline</a></li>
+          <li><a href="ancient.html" data-i18n="nav.ancient">Ancient</a></li>
+          <li><a href="medieval.html" aria-current="page" data-i18n="nav.medieval">Medieval</a></li>
+          <li><a href="independence.html" data-i18n="nav.independence">To Independence</a></li>
+          <li><a href="places.html" data-i18n="nav.places">Places</a></li>
+          <li><a href="sources.html" data-i18n="nav.sources">Sources</a></li>
       </ul>
     </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-current" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" class="lang-btn" data-lang="te" aria-pressed="false" title="Telugu not yet available" aria-description="Telugu not yet available">తెలుగు</button>
+    </div>
+    <p class="lang-note" hidden>Telugu is being written. This site is in English for now.</p>
   </div>
 </header>
   <main id="content" class="wrap">
@@ -94,20 +99,21 @@
   <div class="colophon-inner">
     <nav aria-label="Footer">
       <ul class="foot-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="the-name.html">The name</a></li>
-        <li><a href="timeline.html">Timeline</a></li>
-        <li><a href="ancient.html">Ancient</a></li>
-        <li><a href="medieval.html" aria-current="page">Medieval</a></li>
-        <li><a href="independence.html">To Independence</a></li>
-        <li><a href="places.html">Places</a></li>
-        <li><a href="sources.html">Sources</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="the-name.html" data-i18n="nav.name">The name</a></li>
+        <li><a href="timeline.html" data-i18n="nav.timeline">Timeline</a></li>
+        <li><a href="ancient.html" data-i18n="nav.ancient">Ancient</a></li>
+        <li><a href="medieval.html" aria-current="page" data-i18n="nav.medieval">Medieval</a></li>
+        <li><a href="independence.html" data-i18n="nav.independence">To Independence</a></li>
+        <li><a href="places.html" data-i18n="nav.places">Places</a></li>
+        <li><a href="sources.html" data-i18n="nav.sources">Sources</a></li>
       </ul>
     </nav>
-    <p>The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
-    <p>kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
+    <p data-i18n="footer.stop">The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
+    <p data-i18n="footer.credit">kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
   </div>
 </footer>
+  <script src="js/i18n.js"></script>
   <script>
     document.querySelectorAll(".film-frame video").forEach(function (video) {
       var hide = function () { video.classList.remove("is-ready"); };

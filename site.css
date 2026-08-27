@@ -187,6 +187,45 @@ a:focus-visible {
   border-bottom-color: var(--copper);
 }
 
+.lang-toggle {
+  display: inline-flex;
+  margin-top: 0.65rem;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+
+.lang-btn {
+  appearance: none;
+  font: inherit;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  padding: 0.22rem 0.72rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.lang-btn[data-lang="te"] {
+  font-family: "Noto Sans Telugu", Gautami, "Nirmala UI", system-ui, sans-serif;
+}
+
+.lang-btn.is-current {
+  color: var(--copper);
+  box-shadow: inset 0 -2px 0 var(--copper);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 2px;
+}
+
+.lang-note {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .wrap {
   width: min(var(--measure), calc(100% - 2rem));
   margin: 0 auto;

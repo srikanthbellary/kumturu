@@ -8,15 +8,21 @@
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <a class="skip" href="#content" data-i18n="skip">Skip to the history</a>
   <header class="masthead">
     <div class="masthead-inner">
       <div class="brand">
         <a class="brand-name" href="index.html">Kumturu</a>
-        <span class="brand-tag">A public history of Guntur</span>
+        <span class="brand-tag" data-i18n="brand.tag">A public history of Guntur</span>
       </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-current" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" class="lang-btn" data-lang="te" aria-pressed="false" title="Telugu not yet available" aria-description="Telugu not yet available">తెలుగు</button>
+      </div>
+      <p class="lang-note" hidden>Telugu is being written. This site is in English for now.</p>
     </div>
   </header>
-  <main class="wrap">
+  <main id="content" class="wrap">
     <header class="hero">
       <h1 class="page-title">This page is not here</h1>
     </header>
@@ -25,5 +31,6 @@
       <p><a href="index.html">Return to Kumturu</a></p>
     </div>
   </main>
+  <script src="js/i18n.js"></script>
 </body>
 </html>
