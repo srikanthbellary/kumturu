@@ -446,8 +446,8 @@ Henry Stokes was Collector and Magistrate from **1842 to 1852**. He is the offic
 The district was reconstituted on **1 October 1904**, headquarters again at Guntur, by taking from old Krishna the taluks of Tenali, Bapatla, Guntur, Sattenapalli, Narasaraopet, Vinukonda and Palnadu, and from Nellore the Ongole taluk. The 1911 Britannica gives the new district’s area as 5,733 square miles and the population on that area in 1901 as **1,490,635**. On **1 July 1909** Tenali taluk was split into Tenali and Repalle.
 
 <figure class="plate" id="guntoor-1854">
-  <img src="media/guntoor-1854.jpg" alt="1854 engraved map titled District of Guntoor, by Pharoah and Co. Madras, plate 23, showing the older Guntoor district along the Kistna River." width="600" height="735">
-  <figcaption>Pharoah &amp; Co., Madras, 1854. District of Guntoor. Engraved by J. &amp; C. Walker. <em>Atlas of the Southern Part of India</em>, plate 23. This is the older Guntoor / Kistna survey sheet, not the 1904 reconstituted district. Public-domain map; scan via Geographicus.</figcaption>
+  <img src="media/guntoor-1854.jpg" alt="1854 engraved map titled District of Guntoor, by Pharoah and Co. Madras, plate 23, showing the older Guntoor district along the Kistna River." width="2513" height="3172">
+  <figcaption>Pharoah &amp; Co., Madras, 1854. District of Guntoor. Engraved by J. &amp; C. Walker. <em>Atlas of the Southern Part of India</em>, plate 23. This is the older Guntoor / Kistna survey sheet, not the 1904 reconstituted district. Scan: Internet Archive / California Digital Library, identifier atlasofsouthernp00phar.</figcaption>
 </figure>
 
 ## The town: municipality, cotton, water
@@ -601,7 +601,7 @@ Credit, first: the **Archaeological Survey of India** (Director, Epigraphy: K. M
 
 ## Gazetteers and encyclopaedias
 
-- 1854 Pharoah and Company map of the Guntur District (Guntoor), J. & C. Walker, Atlas of the Southern Part of India (Madras, 1854), plate 23. https://www.geographicus.com/P/AntiqueMap/districtguntoor-pharoah-1854
+- 1854 Pharoah and Company map of the Guntur District (Guntoor), J. & C. Walker, Atlas of the Southern Part of India (Madras, 1854), plate 23. Scan: Internet Archive / California Digital Library, identifier atlasofsouthernp00phar. https://archive.org/details/atlasofsouthernp00phar
 - Gordon Mackenzie, *A Manual of the Kistna District in the Presidency of Madras* (Madras, 1883). https://archive.org/details/amanualkistnadi00mackgoog · https://archive.org/stream/amanualkistnadi00mackgoog/amanualkistnadi00mackgoog_djvu.txt
 - “Guntur,” *Encyclopaedia Britannica*, 11th ed., 1911. https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Guntur
 - “Circar,” *Encyclopaedia Britannica*, 11th ed., 1911. https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Circar
