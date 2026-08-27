@@ -228,6 +228,16 @@ def render_blocks(md: str, page_key: str) -> str:
             out.append("".join(html_rows))
             continue
 
+        if stripped.startswith("<figure"):
+            flush_paras(para)
+            block = [line]
+            i += 1
+            while i < n and "</figure>" not in block[-1]:
+                block.append(lines[i])
+                i += 1
+            out.append("\n".join(block))
+            continue
+
         if stripped.startswith("## "):
             flush_paras(para)
             title = stripped[3:]
