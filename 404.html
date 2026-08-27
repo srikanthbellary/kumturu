@@ -3,16 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found — Kumturu</title>
-  <meta name="description" content="That page is not on this public history of Guntur.">
+  <title>Page not found — Kumturu, Guntur, India</title>
+  <meta name="description" content="That page is not on this public history of Guntur, India.">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <header class="masthead">
     <div class="masthead-inner">
-      <div class="brand">
-        <a class="brand-name" href="index.html">Kumturu</a>
-        <span class="brand-tag">A public history of Guntur</span>
+      <div class="masthead-top">
+        <div class="brand">
+          <a class="brand-name" href="index.html">Kumturu</a>
+          <span class="brand-tag">A public history of Guntur, India</span>
+        </div>
+        <nav class="lang-switch" aria-label="Language">
+          <a href="index.html" lang="en" hreflang="en" data-set-lang="en" aria-current="true">EN</a>
+          <span aria-hidden="true">|</span>
+          <a href="te/index.html" lang="te" hreflang="te" data-set-lang="te">తెలుగు</a>
+        </nav>
       </div>
     </div>
   </header>
@@ -25,5 +32,15 @@
       <p><a href="index.html">Return to Kumturu</a></p>
     </div>
   </main>
+  <script>
+    (function () {
+      var KEY = "kumturu-lang";
+      document.querySelectorAll("[data-set-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+          try { localStorage.setItem(KEY, a.getAttribute("data-set-lang")); } catch (e) {}
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

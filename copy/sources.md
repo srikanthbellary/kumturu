@@ -37,7 +37,7 @@ Credit, first: the **Archaeological Survey of India** (Director, Epigraphy: K. M
 
 ## Gazetteers and encyclopaedias
 
-- 1854 Pharoah and Company map of the Guntur District (Guntoor), J. & C. Walker, Atlas of the Southern Part of India (Madras, 1854), plate 23. https://www.geographicus.com/P/AntiqueMap/districtguntoor-pharoah-1854
+- 1854 Pharoah and Company map of the Guntur District (Guntoor), J. & C. Walker, *An Atlas of the Southern Part of India* (Madras, 1854), plate 23. Internet Archive / California Digital Library, identifier atlasofsouthernp00phar, leaf 57. https://archive.org/details/atlasofsouthernp00phar
 - Gordon Mackenzie, *A Manual of the Kistna District in the Presidency of Madras* (Madras, 1883). https://archive.org/details/amanualkistnadi00mackgoog · https://archive.org/stream/amanualkistnadi00mackgoog/amanualkistnadi00mackgoog_djvu.txt
 - “Guntur,” *Encyclopaedia Britannica*, 11th ed., 1911. https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Guntur
 - “Circar,” *Encyclopaedia Britannica*, 11th ed., 1911. https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Circar

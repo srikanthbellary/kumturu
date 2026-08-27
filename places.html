@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Places — Kumturu</title>
-  <meta name="description" content="Short cards for Bhattiprolu, Amaravati, Chebrolu, Undavalli, Nagarjunakonda, Palnadu, Kondavidu, and Guntur town.">
+  <title>Places — Kumturu, Guntur, India</title>
+  <meta name="description" content="Short cards for Bhattiprolu, Amaravati, Chebrolu, Undavalli, Nagarjunakonda, Palnadu, Kondavidu, and Guntur town, India.">
   <link rel="canonical" href="https://kumturu.com/places.html">
+  <link rel="alternate" hreflang="en" href="https://kumturu.com/places.html">
+  <link rel="alternate" hreflang="te" href="https://kumturu.com/te/places.html">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <a class="skip" href="#content">Skip to the history</a>
   <header class="masthead">
   <div class="masthead-inner">
-    <div class="brand">
-      <a class="brand-name" href="index.html">Kumturu</a>
-      <span class="brand-tag">A public history of Guntur</span>
+    <div class="masthead-top">
+      <div class="brand">
+        <a class="brand-name" href="index.html">Kumturu</a>
+        <span class="brand-tag">A public history of Guntur, India</span>
+      </div>
+      <nav class="lang-switch" aria-label="Language">
+      <a href="places.html" lang="en" hreflang="en" data-set-lang="en" aria-current="true">EN</a>
+      <span aria-hidden="true">|</span>
+      <a href="te/places.html" lang="te" hreflang="te" data-set-lang="te">తెలుగు</a>
+    </nav>
     </div>
     <nav aria-label="Site">
       <ul class="site-nav">
@@ -73,22 +82,32 @@
       </ul>
     </nav>
     <p>The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
-    <p>kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
+    <p>kumturu.com · kumuturu.com · A public history of Guntur, India. Nothing here is invented.</p>
   </div>
 </footer>
   <script>
-    document.querySelectorAll(".film-frame video").forEach(function (video) {
-      var hide = function () { video.classList.remove("is-ready"); };
-      video.addEventListener("loadeddata", function () {
-        if (video.readyState >= 2 && video.videoWidth) video.classList.add("is-ready");
+    (function () {
+      var KEY = "kumturu-lang";
+      var here = document.documentElement.lang === "te" ? "te" : "en";
+      document.querySelectorAll("[data-set-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+          try { localStorage.setItem(KEY, a.getAttribute("data-set-lang")); } catch (e) {}
+        });
       });
-      video.addEventListener("error", hide);
-      video.querySelectorAll("source").forEach(function (source) {
-        source.addEventListener("error", hide);
-      });
-      var play = video.play();
-      if (play && play.catch) play.catch(function () {});
-    });
+      try {
+        var pref = localStorage.getItem(KEY);
+        if (pref && (pref === "en" || pref === "te") && pref !== here) {
+          var dest = document.querySelector('[data-set-lang="' + pref + '"]');
+          if (dest) {
+            var href = dest.getAttribute("href");
+            if (href && !sessionStorage.getItem("kumturu-lang-applied")) {
+              sessionStorage.setItem("kumturu-lang-applied", "1");
+              location.replace(href);
+            }
+          }
+        }
+      } catch (e) {}
+    })();
   </script>
 </body>
 </html>

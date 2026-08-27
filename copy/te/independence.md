@@ -38,6 +38,11 @@
 
 జిల్లాను **1 October 1904**న తిరిగి ఏర్పాటు చేశారు, ప్రధాన కార్యాలయం మళ్ళీ గుంటూరులో ఉంది, పాత కృష్ణ నుండి Tenali, Bapatla, గుంటూరు, సత్తెనపల్లి, నరసరావుపేట, వినుకొండ మరియు Palnadu తాలూకాలు మరియు నెల్లూరు నుండి Ongole తాలూకాను తీసుకున్నారు. 1911 బ్రిటానికా కొత్త జిల్లా వైశాల్యాన్ని 5,733 చదరపు మైళ్ళుగా మరియు 1901లో ఆ ప్రాంతంలో జనాభాను **1,490,635**గా పేర్కొంది. **1 July 1909**న Tenali తాలూకాను Tenali మరియు రేపల్లెగా విభజించారు.
 
+<figure class="plate" id="guntoor-1854">
+  <img src="media/guntoor-1854.jpg" alt="1854 engraved map titled District of Guntoor, by Pharoah and Co. Madras, plate 23, from An Atlas of the Southern Part of India, showing the older Guntoor district along the Kistna River." width="2513" height="3172">
+  <figcaption>Pharoah &amp; Co., Madras, 1854. District of Guntoor. Engraved by J. &amp; C. Walker. <em>An Atlas of the Southern Part of India</em>, plate 23. This is the older Guntoor / Kistna survey sheet, not the 1904 reconstituted district. Public-domain map; scan via Internet Archive / California Digital Library, identifier atlasofsouthernp00phar, leaf 57, plate 23.</figcaption>
+</figure>
+
 ## పట్టణం: మునిసిపాలిటీ, పత్తి, నీరు
 
 సత్యాలను రెండింటినీ కలిపి ఉంచండి. గుంటూరు గ్రామం ఫ్రెంచ్ వారి కంటే పురాతనమైనది. ఫ్రెంచ్ వారు 1750లలో దీనిని జిల్లా కేంద్రంగా చేశారు. బ్రిటిష్ పట్టణం మరియు మునిసిపాలిటీ తరువాత వచ్చాయి.

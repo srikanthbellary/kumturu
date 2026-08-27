@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build static HTML pages from copy/*.md. Run from repo root."""
+"""Build static HTML pages from copy/*.md and copy/te/*.md. Run from repo root."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 COPY = ROOT / "copy"
 
-NAV = [
+NAV_EN = [
     ("index.html", "Home"),
     ("the-name.html", "The name"),
     ("timeline.html", "Timeline"),
@@ -21,54 +21,116 @@ NAV = [
     ("sources.html", "Sources"),
 ]
 
-PAGES = {
+NAV_TE = [
+    ("index.html", "\u0c38\u0c4d\u0c35\u0c3e\u0c17\u0c24\u0c02"),
+    ("the-name.html", "\u0c2a\u0c47\u0c30\u0c41"),
+    ("timeline.html", "\u0c15\u0c3e\u0c32\u0c15\u0c4d\u0c30\u0c2e\u0c02"),
+    ("ancient.html", "\u0c2a\u0c4d\u0c30\u0c3e\u0c1a\u0c40\u0c28\u0c2e\u0c48\u0c28\u0c26\u0c3f"),
+    ("medieval.html", "\u0c2e\u0c27\u0c4d\u0c2f\u0c2f\u0c41\u0c17\u0c02"),
+    ("independence.html", "\u0c38\u0c4d\u0c35\u0c3e\u0c24\u0c02\u0c24\u0c4d\u0c30\u0c4d\u0c2f\u0c3e\u0c28\u0c3f\u0c15\u0c3f"),
+    ("places.html", "\u0c2a\u0c4d\u0c30\u0c26\u0c47\u0c36\u0c3e\u0c32\u0c41"),
+    ("sources.html", "\u0c2e\u0c42\u0c32\u0c3e\u0c32\u0c41"),
+]
+
+PAGES_EN = {
     "index.md": {
         "out": "index.html",
-        "title": "Kumturu — a public history of Guntur",
-        "description": "A public history of Guntur for Guntur people. The name Kumturu, 669 CE, and the story of this river country to 15 August 1947.",
+        "title": "Kumturu \u2014 a public history of Guntur, India",
+        "description": "A public history of Guntur, a city in Andhra Pradesh, India. The name Kumturu, 669 CE, and the story of this river country to 15 August 1947.",
         "h1": "Welcome to Kumturu",
     },
     "the-name.md": {
         "out": "the-name.html",
-        "title": "The name — Kumturu",
-        "description": "Kumturu, 669 CE, is the earliest known epigraphical mention of Guntur. Then Gomturu / Gonturu, Gunturu, and Guntur.",
-        "h1": "The name: Kumturu → Gomturu → Gunturu → Guntur",
+        "title": "The name \u2014 Kumturu, Guntur, India",
+        "description": "Kumturu, 669 CE, is the earliest known epigraphical mention of Guntur, India. Then Gomturu / Gonturu, Gunturu, and Guntur.",
+        "h1": "The name: Kumturu \u2192 Gomturu \u2192 Gunturu \u2192 Guntur",
     },
     "timeline.md": {
         "out": "timeline.html",
-        "title": "Timeline — Kumturu",
-        "description": "Dated claims for Guntur, from palaeolithic tools to the morning of 15 August 1947.",
+        "title": "Timeline \u2014 Kumturu, Guntur, India",
+        "description": "Dated claims for Guntur, Andhra Pradesh, India, from palaeolithic tools to the morning of 15 August 1947.",
         "h1": "Timeline",
     },
     "ancient.md": {
         "out": "ancient.html",
-        "title": "Ancient Guntur — Kumturu",
-        "description": "The Krishna tract, Bhattiprolu, Amaravati, Chebrolu, the Ikshvakus, Undavalli, and the first writing of Kumturu.",
+        "title": "Ancient Guntur, India \u2014 Kumturu",
+        "description": "The Krishna tract in Andhra Pradesh, India: Bhattiprolu, Amaravati, Chebrolu, the Ikshvakus, Undavalli, and the first writing of Kumturu.",
         "h1": "Ancient Guntur",
     },
     "medieval.md": {
         "out": "medieval.html",
-        "title": "Medieval Guntur — Kumturu",
-        "description": "Velanadu, Palnadu, the Kakatiyas, Kondavidu, Krishnadevaraya on 23 June 1515, and Golconda to 1687.",
+        "title": "Medieval Guntur, India \u2014 Kumturu",
+        "description": "Velanadu, Palnadu, the Kakatiyas, Kondavidu, Krishnadevaraya on 23 June 1515, and Golconda to 1687, in historic Guntur, India.",
         "h1": "Medieval Guntur",
     },
     "independence.md": {
         "out": "independence.html",
-        "title": "To Independence — Kumturu",
-        "description": "Circars, the French headquarters, the Company, the district, and the walk to 15 August 1947.",
+        "title": "To Independence \u2014 Kumturu, Guntur, India",
+        "description": "Circars, the French headquarters, the Company, the district, and the walk to 15 August 1947 in Guntur, India.",
         "h1": "To Independence",
     },
     "places.md": {
         "out": "places.html",
-        "title": "Places — Kumturu",
-        "description": "Short cards for Bhattiprolu, Amaravati, Chebrolu, Undavalli, Nagarjunakonda, Palnadu, Kondavidu, and Guntur town.",
+        "title": "Places \u2014 Kumturu, Guntur, India",
+        "description": "Short cards for Bhattiprolu, Amaravati, Chebrolu, Undavalli, Nagarjunakonda, Palnadu, Kondavidu, and Guntur town, India.",
         "h1": "Places",
     },
     "sources.md": {
         "out": "sources.html",
-        "title": "Sources — Kumturu",
-        "description": "Books, stones, gazetteers, and the 2026 ASI reading of the Pune plates behind this public history of Guntur.",
+        "title": "Sources \u2014 Kumturu, Guntur, India",
+        "description": "Books, stones, gazetteers, and the 2026 ASI reading of the Pune plates behind this public history of Guntur, India.",
         "h1": "Sources",
+    },
+}
+
+PAGES_TE = {
+    "index.md": {
+        "out": "te/index.html",
+        "title": "Kumturu \u2014 \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India",
+        "description": "A public history of Guntur, a city in Andhra Pradesh, India, in Telugu. The name Kumturu, 669 CE, and the story of this river country to 15 August 1947.",
+        "h1": "\u0c38\u0c4d\u0c35\u0c3e\u0c17\u0c24\u0c02 Kumturu",
+    },
+    "the-name.md": {
+        "out": "te/the-name.html",
+        "title": "\u0c2a\u0c47\u0c30\u0c41 \u2014 Kumturu, \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India",
+        "description": "Kumturu, 669 CE, is the earliest known epigraphical mention of Guntur, India. Then Gomturu / Gonturu, Gunturu, and Guntur.",
+        "h1": "\u0c2a\u0c47\u0c30\u0c41: Kumturu \u2192 Gomturu \u2192 Gunturu \u2192 \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41",
+    },
+    "timeline.md": {
+        "out": "te/timeline.html",
+        "title": "\u0c15\u0c3e\u0c32\u0c15\u0c4d\u0c30\u0c2e\u0c02 \u2014 Kumturu, \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India",
+        "description": "Dated claims for Guntur, Andhra Pradesh, India, from palaeolithic tools to the morning of 15 August 1947.",
+        "h1": "\u0c15\u0c3e\u0c32\u0c15\u0c4d\u0c30\u0c2e\u0c02",
+    },
+    "ancient.md": {
+        "out": "te/ancient.html",
+        "title": "\u0c2a\u0c4d\u0c30\u0c3e\u0c1a\u0c40\u0c28 \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India \u2014 Kumturu",
+        "description": "The Krishna tract in Andhra Pradesh, India: Bhattiprolu, Amaravati, Chebrolu, the Ikshvakus, Undavalli, and the first writing of Kumturu.",
+        "h1": "\u0c2a\u0c4d\u0c30\u0c3e\u0c1a\u0c40\u0c28 \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41",
+    },
+    "medieval.md": {
+        "out": "te/medieval.html",
+        "title": "\u0c2e\u0c27\u0c4d\u0c2f\u0c2f\u0c41\u0c17 \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India \u2014 Kumturu",
+        "description": "Velanadu, Palnadu, the Kakatiyas, Kondavidu, Krishnadevaraya on 23 June 1515, and Golconda to 1687, in historic Guntur, India.",
+        "h1": "\u0c2e\u0c27\u0c4d\u0c2f\u0c2f\u0c41\u0c17 \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41",
+    },
+    "independence.md": {
+        "out": "te/independence.html",
+        "title": "\u0c38\u0c4d\u0c35\u0c3e\u0c24\u0c02\u0c24\u0c4d\u0c30\u0c4d\u0c2f\u0c3e\u0c28\u0c3f\u0c15\u0c3f \u2014 Kumturu, \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India",
+        "description": "Circars, the French headquarters, the Company, the district, and the walk to 15 August 1947 in Guntur, India.",
+        "h1": "\u0c38\u0c4d\u0c35\u0c3e\u0c24\u0c02\u0c24\u0c4d\u0c30\u0c4d\u0c2f\u0c3e\u0c28\u0c3f\u0c15\u0c3f",
+    },
+    "places.md": {
+        "out": "te/places.html",
+        "title": "\u0c2a\u0c4d\u0c30\u0c26\u0c47\u0c36\u0c3e\u0c32\u0c41 \u2014 Kumturu, \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India",
+        "description": "Short cards for Bhattiprolu, Amaravati, Chebrolu, Undavalli, Nagarjunakonda, Palnadu, Kondavidu, and Guntur town, India.",
+        "h1": "\u0c2a\u0c4d\u0c30\u0c26\u0c47\u0c36\u0c3e\u0c32\u0c41",
+    },
+    "sources.md": {
+        "out": "te/sources.html",
+        "title": "\u0c2e\u0c42\u0c32\u0c3e\u0c32\u0c41 \u2014 Kumturu, \u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, India",
+        "description": "Books, stones, gazetteers, and the 2026 ASI reading of the Pune plates behind this public history of Guntur, India.",
+        "h1": "\u0c2e\u0c42\u0c32\u0c3e\u0c32\u0c41",
     },
 }
 
@@ -82,11 +144,32 @@ MD_LINKS = {
     "sources.md": "sources.html",
 }
 
-VIDEO_CAPTION = "An impression of river-country life, not an archive film."
+STILL_CAPTION = "An impression of river-country life, not an archive film."
+BRAND_TAG = "A public history of Guntur, India"
+LOCATOR_EN = "Guntur, Andhra Pradesh, India. South bank of the Krishna."
+LOCATOR_TE = "\u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, Andhra Pradesh, India. South bank of the Krishna."
+
+STILLS = {
+    "village": ("media/01-village-road.png", "Bullock carts on a village road beside a tank and palms, a rocky hill beyond, in the Krishna country of Guntur, India."),
+    "vengi": ("media/02-vengi-court.png", "An impression of an Eastern Chalukya court at Vengi."),
+    "kondavidu": ("media/03-kondavidu.png", "An impression of the Kondavidu hill forts west of Guntur, India."),
+    "krishna": ("media/04-krishna-country.png", "An impression of Krishna-country river land on the south bank, Guntur, India."),
+    "bhattiprolu": ("media/05-bhattiprolu.png", "Brick stupa at Bhattiprolu among palms and paddy at low sun."),
+    "tenali": ("media/06-tenali-1942.png", "An impression of Tenali in 1942."),
+}
+
+FILM_HEADINGS = {
+    "Bhattiprolu and king Kuberaka": "bhattiprolu",
+    "Bhattiprolu \u0c2e\u0c30\u0c3f\u0c2f\u0c41 \u0c30\u0c3e\u0c1c\u0c41 Kuberaka": "bhattiprolu",
+    "The Eastern Chalukyas, and the first writing of the name": "vengi",
+    "\u0c24\u0c42\u0c30\u0c4d\u0c2a\u0c41 Chalukyas, \u0c2e\u0c30\u0c3f\u0c2f\u0c41 \u0c2a\u0c47\u0c30\u0c41 \u0c2f\u0c4a\u0c15\u0c4d\u0c15 \u0c2e\u0c4a\u0c26\u0c1f\u0c3f \u0c30\u0c1a\u0c28": "vengi",
+    "The Reddis and Kondavidu": "kondavidu",
+    "\u0c30\u0c46\u0c21\u0c4d\u0c21\u0c40\u0c32\u0c41 \u0c2e\u0c30\u0c3f\u0c2f\u0c41 Kondavidu": "kondavidu",
+    "Tenali, 12 August 1942": "tenali",
+}
 
 
 def inline(text: str) -> str:
-    # Protect links first
     links: list[str] = []
 
     def store_link(m: re.Match) -> str:
@@ -141,37 +224,55 @@ def is_sep(row: list[str]) -> bool:
     return all(re.fullmatch(r":?-{3,}:?", c or "") for c in row)
 
 
-def film_band(src: str, extra_class: str = "") -> str:
+def film_band(key: str, extra_class: str = "", prefix: str = "") -> str:
+    src, alt = STILLS[key]
     cls = "film-band" + (f" {extra_class}" if extra_class else "")
     return f"""<figure class="{cls}">
   <div class="film-frame">
-    <video muted loop playsinline autoplay preload="metadata" disablepictureinpicture>
-      <source src="{src}" type="video/mp4">
-    </video>
+    <img src="{prefix}{src}" alt="{html.escape(alt, quote=True)}" width="1536" height="1024">
   </div>
-  <figcaption>{VIDEO_CAPTION}</figcaption>
+  <figcaption>{STILL_CAPTION}</figcaption>
 </figure>"""
 
 
-PLATES = """<div class="plates">
+def plates(prefix: str = "") -> str:
+    return f"""<div class="plates">
 <figure class="plate">
-  <img src="media/plates-seal.jpg" alt="Circular metal seal of the Pune plates: a crescent above a line of raised script and a lotus below, on a weathered copper face." width="800" height="800">
+  <img src="{prefix}media/plates-seal.jpg" alt="Circular metal seal of the Pune plates: a crescent above a line of raised script and a lotus below, on a plain field." width="800" height="800">
   <figcaption>Circular seal of the three-leaf charter: lotus, crescent, and the legend <em>Sri Vishamasiddhi</em>. News photograph of a privately held plate (Ameet Lomte, Pune), read by ASI Director (Epigraphy) K. Munirathnam Reddy. Not an excavation of this site, and not a published plate edition.</figcaption>
 </figure>
 <figure class="plate">
-  <img src="media/plates-leaf.jpg" alt="A rectangular copper leaf with five lines of incised Telugu-Kannada script and a circular binding hole at the left." width="1200" height="800">
+  <img src="{prefix}media/plates-leaf.jpg" alt="A rectangular copper leaf with five lines of incised Telugu-Kannada script and a circular binding hole at the left." width="1200" height="800">
   <figcaption>A copper leaf of the same privately held set. A line is marked in the source photograph. Held by Ameet Lomte, Pune; reading by ASI Director (Epigraphy) K. Munirathnam Reddy. News / social-media photograph, August 2026.</figcaption>
 </figure>
 <figure class="plate">
-  <img src="media/plates-set.jpg" alt="A copper plate on a ring, with five lines of script and one passage underlined in the source photograph." width="1200" height="800">
+  <img src="{prefix}media/plates-set.jpg" alt="A copper plate on a ring, with five lines of script and one passage underlined in the source photograph." width="1200" height="800">
   <figcaption>The bound set: leaves on a ring, one line underlined in the source post. Privately held plates (Ameet Lomte, Pune), read by ASI Director (Epigraphy) K. Munirathnam Reddy. These photographs are not a published edition of the inner grant.</figcaption>
 </figure>
 </div>"""
 
 
-def render_blocks(md: str, page_key: str) -> str:
+def coins(prefix: str = "") -> str:
+    credit = "Sada coins: Vaddamanu excavations (BACRI) and British Museum; photographs as published by Shailendra Bhandare, 2016."
+    return f"""<div class="coins">
+<figure class="plate">
+  <img src="{prefix}media/coin-maha-sada.jpg" alt="Lead coin of Maha Sada, obverse and reverse, from the Vaddamanu excavations." width="346" height="185">
+  <figcaption>Maha Sada. Lead. Vaddamanu excavations (BACRI).</figcaption>
+</figure>
+<figure class="plate">
+  <img src="{prefix}media/coin-siri-sada.jpg" alt="Lead coin of Siri Sada, obverse and reverse." width="347" height="182">
+  <figcaption>Siri Sada. Lead. Photograph as published by Shailendra Bhandare, 2016.</figcaption>
+</figure>
+<figure class="plate">
+  <img src="{prefix}media/coin-asaka-sada.jpg" alt="Lead coin of Asaka Sada, obverse and reverse, British Museum." width="345" height="162">
+  <figcaption>Asaka Sada. Lead. British Museum.</figcaption>
+</figure>
+<p class="note coin-credit">{html.escape(credit)}</p>
+</div>"""
+
+
+def render_blocks(md: str, page_key: str, prefix: str = "") -> str:
     lines = md.splitlines()
-    # drop first ATX title
     if lines and lines[0].startswith("# "):
         lines = lines[1:]
     while lines and not lines[0].strip():
@@ -219,7 +320,7 @@ def render_blocks(md: str, page_key: str) -> str:
             for row in body:
                 html_rows.append("<tr>")
                 if empty_header or (page_key == "the-name.md" and len(row) == 2):
-                    html_rows.append(f"<th scope=\"row\">{inline(row[0])}</th>")
+                    html_rows.append(f'<th scope="row">{inline(row[0])}</th>')
                     html_rows.extend(f"<td>{inline(c)}</td>" for c in row[1:])
                 else:
                     html_rows.extend(f"<td>{inline(c)}</td>" for c in row)
@@ -235,7 +336,10 @@ def render_blocks(md: str, page_key: str) -> str:
             while i < n and "</figure>" not in block[-1]:
                 block.append(lines[i])
                 i += 1
-            out.append("\n".join(block))
+            fig = "\n".join(block)
+            if prefix:
+                fig = fig.replace('src="media/', f'src="{prefix}media/')
+            out.append(fig)
             continue
 
         if stripped.startswith("## "):
@@ -243,14 +347,15 @@ def render_blocks(md: str, page_key: str) -> str:
             title = stripped[3:]
             h2_count += 1
             if page_key == "index.md" and h2_count == 2:
-                out.append(film_band("media/01-village-road.mp4", "breakout"))
+                out.append(film_band("village", "breakout", prefix))
             if page_key == "index.md" and h2_count == 3:
-                out.append(film_band("media/04-krishna-country.mp4", "breakout"))
-            if page_key == "ancient.md" and title == "The Eastern Chalukyas, and the first writing of the name":
-                out.append(film_band("media/02-vengi-court.mp4", "breakout"))
-            if page_key == "medieval.md" and title == "The Reddis and Kondavidu":
-                out.append(film_band("media/03-kondavidu.mp4", "breakout"))
+                out.append(film_band("krishna", "breakout", prefix))
+            still_key = FILM_HEADINGS.get(title)
+            if still_key:
+                out.append(film_band(still_key, "breakout", prefix))
             hid = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+            if not hid:
+                hid = f"section-{h2_count}"
             out.append(f'<h2 id="{html.escape(hid, quote=True)}">{inline(title)}</h2>')
             i += 1
             continue
@@ -259,6 +364,8 @@ def render_blocks(md: str, page_key: str) -> str:
             flush_paras(para)
             title = stripped[4:]
             hid = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+            if not hid:
+                hid = "section"
             out.append(f'<h3 id="{html.escape(hid, quote=True)}">{inline(title)}</h3>')
             i += 1
             continue
@@ -289,7 +396,6 @@ def render_blocks(md: str, page_key: str) -> str:
 
 
 def wrap_places(body: str) -> str:
-    # Turn each h2 + following block into a card; keep the intro paragraph outside.
     parts = re.split(r'(<h2 id="[^"]+">)', body, maxsplit=1)
     if len(parts) < 3:
         return body
@@ -306,17 +412,37 @@ def wrap_places(body: str) -> str:
     return intro + '<div class="places">' + "".join(cards) + "</div>"
 
 
-def header(current: str) -> str:
+def lang_switch(leaf: str, lang: str) -> str:
+    if lang == "te":
+        en_href = f"../{leaf}"
+        te_href = leaf
+        en_cur, te_cur = "", ' aria-current="true"'
+    else:
+        en_href = leaf
+        te_href = f"te/{leaf}"
+        en_cur, te_cur = ' aria-current="true"', ""
+    return f"""<nav class="lang-switch" aria-label="Language">
+      <a href="{en_href}" lang="en" hreflang="en" data-set-lang="en"{en_cur}>EN</a>
+      <span aria-hidden="true">|</span>
+      <a href="{te_href}" lang="te" hreflang="te" data-set-lang="te"{te_cur}>\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41</a>
+    </nav>"""
+
+
+def header(current_leaf: str, lang: str) -> str:
+    nav_items = NAV_TE if lang == "te" else NAV_EN
     items = []
-    for href, label in NAV:
-        cur = ' aria-current="page"' if href == current else ""
+    for href, label in nav_items:
+        cur = ' aria-current="page"' if href == current_leaf else ""
         items.append(f'<li><a href="{href}"{cur}>{label}</a></li>')
     nav = "\n          ".join(items)
     return f"""<header class="masthead">
   <div class="masthead-inner">
-    <div class="brand">
-      <a class="brand-name" href="index.html">Kumturu</a>
-      <span class="brand-tag">A public history of Guntur</span>
+    <div class="masthead-top">
+      <div class="brand">
+        <a class="brand-name" href="index.html">Kumturu</a>
+        <span class="brand-tag">{BRAND_TAG}</span>
+      </div>
+      {lang_switch(current_leaf, lang)}
     </div>
     <nav aria-label="Site">
       <ul class="site-nav">
@@ -327,10 +453,11 @@ def header(current: str) -> str:
 </header>"""
 
 
-def footer(current: str) -> str:
+def footer(current_leaf: str, lang: str) -> str:
+    nav_items = NAV_TE if lang == "te" else NAV_EN
     items = []
-    for href, label in NAV:
-        cur = ' aria-current="page"' if href == current else ""
+    for href, label in nav_items:
+        cur = ' aria-current="page"' if href == current_leaf else ""
         items.append(f'<li><a href="{href}"{cur}>{label}</a></li>')
     nav = "\n        ".join(items)
     return f"""<footer class="colophon">
@@ -341,83 +468,129 @@ def footer(current: str) -> str:
       </ul>
     </nav>
     <p>The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
-    <p>kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
+    <p>kumturu.com \u00b7 kumuturu.com \u00b7 A public history of Guntur, India. Nothing here is invented.</p>
   </div>
 </footer>"""
 
 
-def page_shell(meta: dict, body: str, extra_class: str = "") -> str:
+def lang_script() -> str:
+    return """  <script>
+    (function () {
+      var KEY = "kumturu-lang";
+      var here = document.documentElement.lang === "te" ? "te" : "en";
+      document.querySelectorAll("[data-set-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+          try { localStorage.setItem(KEY, a.getAttribute("data-set-lang")); } catch (e) {}
+        });
+      });
+      try {
+        var pref = localStorage.getItem(KEY);
+        if (pref && (pref === "en" || pref === "te") && pref !== here) {
+          var dest = document.querySelector('[data-set-lang="' + pref + '"]');
+          if (dest) {
+            var href = dest.getAttribute("href");
+            if (href && !sessionStorage.getItem("kumturu-lang-applied")) {
+              sessionStorage.setItem("kumturu-lang-applied", "1");
+              location.replace(href);
+            }
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>"""
+
+
+def page_shell(meta: dict, body: str, extra_class: str = "", lang: str = "en") -> str:
     current = meta["out"]
+    leaf = Path(current).name
+    prefix = "../" if lang == "te" else ""
     wrap_cls = "wrap wide" if extra_class else "wrap"
-    hero = ""
-    if current == "index.html":
-        hero = """<header class="hero">
-      <p class="kicker">Kumturu · 669 CE</p>
-      <h1>Welcome to Kumturu</h1>
-      <p class="chain">Kumturu → Gomturu / Gonturu → Gunturu → Guntur</p>
+    css = f"{prefix}site.css"
+    if leaf == "index.html":
+        if lang == "te":
+            canon = "te/"
+            h1 = meta["h1"]
+            locator = LOCATOR_TE
+        else:
+            canon = ""
+            h1 = "Welcome to Kumturu"
+            locator = LOCATOR_EN
+        hero = f"""<header class="hero">
+      <p class="kicker">Kumturu \u00b7 669 CE</p>
+      <h1>{html.escape(h1)}</h1>
+      <p class="locator">{html.escape(locator)}</p>
+      <p class="chain">Kumturu \u2192 Gomturu / Gonturu \u2192 Gunturu \u2192 Guntur</p>
     </header>"""
-        # body already starts after the dropped h1; first paras are the welcome
     else:
+        canon = current if not current.endswith("index.html") else ("te/" if lang == "te" else "")
         hero = f"""<header class="hero">
       <h1 class="page-title">{html.escape(meta["h1"])}</h1>
     </header>"""
 
-    # closing italic on home: last paragraph after the list
-    if current == "index.html":
-        body = body.replace(
-            "<p>Welcome. The name is old. The river is older. The people were here before either was written down.</p>",
-            '<p class="closing">Welcome. The name is old. The river is older. The people were here before either was written down.</p>',
-        )
+    en_close = "<p>Welcome. The name is old. The river is older. The people were here before either was written down.</p>"
+    te_close = "<p>\u0c38\u0c4d\u0c35\u0c3e\u0c17\u0c24\u0c02. \u0c2a\u0c47\u0c30\u0c41 \u0c2a\u0c3e\u0c24\u0c26\u0c3f. \u0c28\u0c26\u0c3f \u0c2a\u0c3e\u0c24\u0c26\u0c3f. \u0c0f\u0c26\u0c48\u0c28\u0c3e \u0c35\u0c4d\u0c30\u0c3e\u0c2f\u0c2c\u0c21\u0c1f\u0c3e\u0c28\u0c3f\u0c15\u0c3f \u0c2e\u0c41\u0c02\u0c26\u0c41 \u0c2a\u0c4d\u0c30\u0c1c\u0c32\u0c41 \u0c07\u0c15\u0c4d\u0c15\u0c21 \u0c09\u0c28\u0c4d\u0c28\u0c3e\u0c30\u0c41.</p>"
+    if leaf == "index.html":
+        body = body.replace(en_close, '<p class="closing">Welcome. The name is old. The river is older. The people were here before either was written down.</p>')
+        body = body.replace(te_close, '<p class="closing">\u0c38\u0c4d\u0c35\u0c3e\u0c17\u0c24\u0c02. \u0c2a\u0c47\u0c30\u0c41 \u0c2a\u0c3e\u0c24\u0c26\u0c3f. \u0c28\u0c26\u0c3f \u0c2a\u0c3e\u0c24\u0c26\u0c3f. \u0c0f\u0c26\u0c48\u0c28\u0c3e \u0c35\u0c4d\u0c30\u0c3e\u0c2f\u0c2c\u0c21\u0c1f\u0c3e\u0c28\u0c3f\u0c15\u0c3f \u0c2e\u0c41\u0c02\u0c26\u0c41 \u0c2a\u0c4d\u0c30\u0c1c\u0c32\u0c41 \u0c07\u0c15\u0c4d\u0c15\u0c21 \u0c09\u0c28\u0c4d\u0c28\u0c3e\u0c30\u0c41.</p>')
+
+    alt_en = f"https://kumturu.com/{'' if leaf == 'index.html' else leaf}"
+    alt_te = f"https://kumturu.com/te/{'' if leaf == 'index.html' else leaf}"
 
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(meta["title"])}</title>
   <meta name="description" content="{html.escape(meta["description"])}">
-  <link rel="canonical" href="https://kumturu.com/{'' if current == 'index.html' else current}">
-  <link rel="stylesheet" href="site.css">
+  <link rel="canonical" href="https://kumturu.com/{canon}">
+  <link rel="alternate" hreflang="en" href="{alt_en}">
+  <link rel="alternate" hreflang="te" href="{alt_te}">
+  <link rel="stylesheet" href="{css}">
 </head>
 <body>
   <a class="skip" href="#content">Skip to the history</a>
-  {header(current)}
+  {header(leaf, lang)}
   <main id="content" class="{wrap_cls}">
     {hero}
     <div class="prose">
 {body}
     </div>
   </main>
-  {footer(current)}
-  <script>
-    document.querySelectorAll(".film-frame video").forEach(function (video) {{
-      var hide = function () {{ video.classList.remove("is-ready"); }};
-      video.addEventListener("loadeddata", function () {{
-        if (video.readyState >= 2 && video.videoWidth) video.classList.add("is-ready");
-      }});
-      video.addEventListener("error", hide);
-      video.querySelectorAll("source").forEach(function (source) {{
-        source.addEventListener("error", hide);
-      }});
-      var play = video.play();
-      if (play && play.catch) play.catch(function () {{}});
-    }});
-  </script>
+  {footer(leaf, lang)}
+{lang_script()}
 </body>
 </html>
 """
 
 
-def main() -> None:
-    for md_name, meta in PAGES.items():
-        raw = (COPY / md_name).read_text(encoding="utf-8")
-        body = render_blocks(raw, md_name)
+def build_lang(pages: dict, copy_dir: Path, lang: str) -> None:
+    prefix = "../" if lang == "te" else ""
+    for md_name, meta in pages.items():
+        raw = (copy_dir / md_name).read_text(encoding="utf-8")
+        body = render_blocks(raw, md_name, prefix)
         extra = ""
         if md_name == "the-name.md":
             extra = "wide"
-            marker = "The name, the king, the year, and the seal are what the 2026 briefing placed in public view.</p>"
-            if marker in body:
-                body = body.replace(marker, marker + "\n" + PLATES, 1)
+            for marker in (
+                "The name, the king, the year, and the seal are what the 2026 briefing placed in public view.</p>",
+                "\u0c2a\u0c47\u0c30\u0c41, \u0c30\u0c3e\u0c1c\u0c41, \u0c38\u0c02\u0c35\u0c24\u0c4d\u0c38\u0c30\u0c02 \u0c2e\u0c30\u0c3f\u0c2f\u0c41 \u0c2e\u0c41\u0c26\u0c4d\u0c30 2026 \u0c2c\u0c4d\u0c30\u0c40\u0c2b\u0c3f\u0c02\u0c17\u0c4d \u0c2a\u0c4d\u0c30\u0c1c\u0c32 \u0c26\u0c43\u0c37\u0c4d\u0c1f\u0c3f\u0c32\u0c4b \u0c09\u0c02\u0c1a\u0c3f\u0c02\u0c26\u0c3f.</p>",
+            ):
+                if marker in body:
+                    body = body.replace(marker, marker + "\n" + plates(prefix), 1)
+                    break
+        if md_name == "ancient.md":
+            inserted = False
+            for marker in (
+                "yielded coins with legends ending in <em>-Sada</em>.</p>",
+                "<em>-Sada</em> \u0c24\u0c4b \u0c2e\u0c41\u0c17\u0c3f\u0c38\u0c47 \u0c2a\u0c41\u0c30\u0c3e\u0c23\u0c3e\u0c32\u0c24\u0c4b \u0c28\u0c3e\u0c23\u0c47\u0c32\u0c41 \u0c32\u0c2d\u0c3f\u0c02\u0c1a\u0c3e\u0c2f\u0c3f.</p>",
+            ):
+                if marker in body:
+                    body = body.replace(marker, marker + "\n" + coins(prefix), 1)
+                    inserted = True
+                    break
+            if not inserted:
+                raise SystemExit(f"coin marker missing for {lang} ancient")
         if md_name == "places.md":
             body = wrap_places(body)
             extra = "wide"
@@ -425,10 +598,16 @@ def main() -> None:
             extra = "wide"
         if md_name == "sources.md":
             extra = "wide"
-        html_out = page_shell(meta, body, extra)
+        html_out = page_shell(meta, body, extra, lang)
         dest = ROOT / meta["out"]
+        dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(html_out, encoding="utf-8")
-        print("wrote", dest.name)
+        print("wrote", dest.relative_to(ROOT))
+
+
+def main() -> None:
+    build_lang(PAGES_EN, COPY, "en")
+    build_lang(PAGES_TE, COPY / "te", "te")
 
 
 if __name__ == "__main__":

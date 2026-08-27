@@ -135,12 +135,41 @@ a:focus-visible {
   padding: 1.05rem 0 0.95rem;
 }
 
+.masthead-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.45rem 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
 .brand {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.55rem 1.1rem;
-  margin-bottom: 0.7rem;
+}
+
+.lang-switch {
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.lang-switch a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lang-switch a:hover,
+.lang-switch a[aria-current="true"] {
+  color: var(--copper);
+}
+
+.locator {
+  margin: 0 0 0.55rem;
+  color: var(--river);
+  font-size: 1.05rem;
 }
 
 .brand-name {
@@ -438,7 +467,7 @@ tr:last-child td {
 
 .film-frame {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   background:
     linear-gradient(165deg, color-mix(in srgb, var(--surface) 80%, var(--copper)) 0%, var(--copper) 46%, var(--soot) 100%);
@@ -460,16 +489,12 @@ tr:last-child td {
   opacity: 0.28;
 }
 
-.film-frame video {
+.film-frame img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: none;
-}
-
-.film-frame video.is-ready {
   display: block;
 }
 
@@ -558,4 +583,35 @@ tr:last-child td {
 .note {
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.coins {
+  display: grid;
+  gap: 1.1rem;
+  margin: 1.6rem 0 1.8rem;
+}
+
+@media (min-width: 760px) {
+  .coins {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.coins .coin-credit,
+.coin-credit {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+html[lang="te"] body {
+  font-family: "Noto Serif Telugu", "Noto Sans Telugu", "Gautami", "Vani", "Nirmala UI", "Source Serif 4", "Palatino Linotype", Palatino, serif;
+}
+
+html[lang="te"] h1,
+html[lang="te"] h2,
+html[lang="te"] h3,
+html[lang="te"] .brand-name,
+html[lang="te"] .kicker,
+html[lang="te"] .chain {
+  font-family: "Noto Serif Telugu", "Noto Sans Telugu", "Gautami", "Cormorant Garamond", "Palatino Linotype", Palatino, serif;
 }

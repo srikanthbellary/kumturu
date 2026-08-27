@@ -35,7 +35,11 @@
 - కృష్ణరాయల Amaravati శాసనం, శక-సంవత్ 1437 (మంగళగిరి / కాజా / Kondavidu చర్చ). https://doi.org/10.11588/xarep.00004141
 - మల్కాపురం స్తంభం (JAHRS IV; A.R. 94 ఆఫ్ 1917), *ఇండియన్ జర్నల్ ఆఫ్ హిస్టరీ ఆఫ్ సైన్స్* 55(4), 2020లో చర్చించబడింది. https://doi.org/10.16943/ijhs/2020/v55i4/158284
 
+- Shailendra Bhandare, “Money and the Monuments: Coins of the Sada Dynasty of the Coastal Andhra Region,” in Akira Shimada and Michael Willis (eds.), *Amaravati: The Art of an Early Buddhist Monument in Context* (British Museum, 2016), 37–45. Photographs as published. https://ora.ox.ac.uk/objects/uuid:cee284bc-96cb-4213-b390-8b7cdab71856
+
 ## గెజిటీర్లు మరియు ఎన్‌సైక్లోపీడియాలు
+
+- 1854 Pharoah and Company map of the Guntur District (Guntoor), J. & C. Walker, *An Atlas of the Southern Part of India* (Madras, 1854), plate 23. Internet Archive / California Digital Library, identifier atlasofsouthernp00phar, leaf 57. https://archive.org/details/atlasofsouthernp00phar
 
 - గోర్డాన్ మెకెంజీ, *ఎ మాన్యువల్ ఆఫ్ ది Kistna డిస్ట్రిక్ట్ ఇన్ ది ప్రెసిడెన్సీ ఆఫ్ మద్రాస్* (మద్రాస్, 1883). https://archive.org/details/amanualkistnadi00mackgoog · https://archive.org/stream/amanualkistnadi00mackgoog/amanualkistnadi00mackgoog_djvu.txt
 - "గుంటూరు," *ఎన్‌సైక్లోపీడియా బ్రిటానికా*, 11వ ఎడిషన్, 1911. https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Guntur

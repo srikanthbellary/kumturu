@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kumturu — a public history of Guntur</title>
-  <meta name="description" content="A public history of Guntur for Guntur people. The name Kumturu, 669 CE, and the story of this river country to 15 August 1947.">
+  <title>Kumturu — a public history of Guntur, India</title>
+  <meta name="description" content="A public history of Guntur, a city in Andhra Pradesh, India. The name Kumturu, 669 CE, and the story of this river country to 15 August 1947.">
   <link rel="canonical" href="https://kumturu.com/">
+  <link rel="alternate" hreflang="en" href="https://kumturu.com/">
+  <link rel="alternate" hreflang="te" href="https://kumturu.com/te/">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <a class="skip" href="#content">Skip to the history</a>
   <header class="masthead">
   <div class="masthead-inner">
-    <div class="brand">
-      <a class="brand-name" href="index.html">Kumturu</a>
-      <span class="brand-tag">A public history of Guntur</span>
+    <div class="masthead-top">
+      <div class="brand">
+        <a class="brand-name" href="index.html">Kumturu</a>
+        <span class="brand-tag">A public history of Guntur, India</span>
+      </div>
+      <nav class="lang-switch" aria-label="Language">
+      <a href="index.html" lang="en" hreflang="en" data-set-lang="en" aria-current="true">EN</a>
+      <span aria-hidden="true">|</span>
+      <a href="te/index.html" lang="te" hreflang="te" data-set-lang="te">తెలుగు</a>
+    </nav>
     </div>
     <nav aria-label="Site">
       <ul class="site-nav">
@@ -34,10 +43,11 @@
     <header class="hero">
       <p class="kicker">Kumturu · 669 CE</p>
       <h1>Welcome to Kumturu</h1>
+      <p class="locator">Guntur, Andhra Pradesh, India. South bank of the Krishna.</p>
       <p class="chain">Kumturu → Gomturu / Gonturu → Gunturu → Guntur</p>
     </header>
     <div class="prose">
-<p>This is a public history of Guntur — written for the people who live here, and for anyone who wants to know how old this name is, and how long this river country has been a home.</p>
+<p>This is a public history of Guntur, a city in Andhra Pradesh, India — written for the people who live here, and for the rest of the world.</p>
 <p>We call the town Guntur. In English records it is Guntur or, older, Guntoor. In Telugu it is Gunturu. A thousand years ago copper plates called it Gomturu, or Gonturu. In <strong>669 CE</strong>, in the first year of the Eastern Chalukya king Vishnuvardhana II, three copper plates now at Pune named a place <strong>Kumturu</strong>. The Archaeological Survey of India reads that as the earliest known writing of this town’s name.</p>
 <p>This site follows that chain: Kumturu, then Gomturu, then Gunturu, then Guntur. It does not pretend that a name is the same as a city wall. It says what the stones and the older books allow us to say, and it stops where our permission to tell the story stops — on the morning of <strong>15 August 1947</strong>.</p>
 <h2 id="a-river-country">A river country</h2>
@@ -47,9 +57,7 @@
 <p>What happened after that morning — including the formation of Andhra State in 1953 — is beyond this site.</p>
 <figure class="film-band breakout">
   <div class="film-frame">
-    <video muted loop playsinline autoplay preload="metadata" disablepictureinpicture>
-      <source src="media/01-village-road.mp4" type="video/mp4">
-    </video>
+    <img src="media/01-village-road.png" alt="Bullock carts on a village road beside a tank and palms, a rocky hill beyond, in the Krishna country of Guntur, India." width="1536" height="1024">
   </div>
   <figcaption>An impression of river-country life, not an archive film.</figcaption>
 </figure>
@@ -58,9 +66,7 @@
 <p>This is history written for Guntur people. It is warm on purpose. It is also careful on purpose.</p>
 <figure class="film-band breakout">
   <div class="film-frame">
-    <video muted loop playsinline autoplay preload="metadata" disablepictureinpicture>
-      <source src="media/04-krishna-country.mp4" type="video/mp4">
-    </video>
+    <img src="media/04-krishna-country.png" alt="An impression of Krishna-country river land on the south bank, Guntur, India." width="1536" height="1024">
   </div>
   <figcaption>An impression of river-country life, not an archive film.</figcaption>
 </figure>
@@ -92,22 +98,32 @@
       </ul>
     </nav>
     <p>The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
-    <p>kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
+    <p>kumturu.com · kumuturu.com · A public history of Guntur, India. Nothing here is invented.</p>
   </div>
 </footer>
   <script>
-    document.querySelectorAll(".film-frame video").forEach(function (video) {
-      var hide = function () { video.classList.remove("is-ready"); };
-      video.addEventListener("loadeddata", function () {
-        if (video.readyState >= 2 && video.videoWidth) video.classList.add("is-ready");
+    (function () {
+      var KEY = "kumturu-lang";
+      var here = document.documentElement.lang === "te" ? "te" : "en";
+      document.querySelectorAll("[data-set-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+          try { localStorage.setItem(KEY, a.getAttribute("data-set-lang")); } catch (e) {}
+        });
       });
-      video.addEventListener("error", hide);
-      video.querySelectorAll("source").forEach(function (source) {
-        source.addEventListener("error", hide);
-      });
-      var play = video.play();
-      if (play && play.catch) play.catch(function () {});
-    });
+      try {
+        var pref = localStorage.getItem(KEY);
+        if (pref && (pref === "en" || pref === "te") && pref !== here) {
+          var dest = document.querySelector('[data-set-lang="' + pref + '"]');
+          if (dest) {
+            var href = dest.getAttribute("href");
+            if (href && !sessionStorage.getItem("kumturu-lang-applied")) {
+              sessionStorage.setItem("kumturu-lang-applied", "1");
+              location.replace(href);
+            }
+          }
+        }
+      } catch (e) {}
+    })();
   </script>
 </body>
 </html>

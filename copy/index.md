@@ -1,6 +1,6 @@
 # Welcome to Kumturu
 
-This is a public history of Guntur — written for the people who live here, and for anyone who wants to know how old this name is, and how long this river country has been a home.
+This is a public history of Guntur, a city in Andhra Pradesh, India — written for the people who live here, and for the rest of the world.
 
 We call the town Guntur. In English records it is Guntur or, older, Guntoor. In Telugu it is Gunturu. A thousand years ago copper plates called it Gomturu, or Gonturu. In **669 CE**, in the first year of the Eastern Chalukya king Vishnuvardhana II, three copper plates now at Pune named a place **Kumturu**. The Archaeological Survey of India reads that as the earliest known writing of this town’s name.
 

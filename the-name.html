@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The name — Kumturu</title>
-  <meta name="description" content="Kumturu, 669 CE, is the earliest known epigraphical mention of Guntur. Then Gomturu / Gonturu, Gunturu, and Guntur.">
+  <title>The name — Kumturu, Guntur, India</title>
+  <meta name="description" content="Kumturu, 669 CE, is the earliest known epigraphical mention of Guntur, India. Then Gomturu / Gonturu, Gunturu, and Guntur.">
   <link rel="canonical" href="https://kumturu.com/the-name.html">
+  <link rel="alternate" hreflang="en" href="https://kumturu.com/the-name.html">
+  <link rel="alternate" hreflang="te" href="https://kumturu.com/te/the-name.html">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <a class="skip" href="#content">Skip to the history</a>
   <header class="masthead">
   <div class="masthead-inner">
-    <div class="brand">
-      <a class="brand-name" href="index.html">Kumturu</a>
-      <span class="brand-tag">A public history of Guntur</span>
+    <div class="masthead-top">
+      <div class="brand">
+        <a class="brand-name" href="index.html">Kumturu</a>
+        <span class="brand-tag">A public history of Guntur, India</span>
+      </div>
+      <nav class="lang-switch" aria-label="Language">
+      <a href="the-name.html" lang="en" hreflang="en" data-set-lang="en" aria-current="true">EN</a>
+      <span aria-hidden="true">|</span>
+      <a href="te/the-name.html" lang="te" hreflang="te" data-set-lang="te">తెలుగు</a>
+    </nav>
     </div>
     <nav aria-label="Site">
       <ul class="site-nav">
@@ -47,7 +56,7 @@
 <p>The grant’s inner contents — who received land, in which <em>vishaya</em>, what the boundaries of Kumturu were — have not yet been published plate by plate. The name, the king, the year, and the seal are what the 2026 briefing placed in public view.</p>
 <div class="plates">
 <figure class="plate">
-  <img src="media/plates-seal.jpg" alt="Circular metal seal of the Pune plates: a crescent above a line of raised script and a lotus below, on a weathered copper face." width="800" height="800">
+  <img src="media/plates-seal.jpg" alt="Circular metal seal of the Pune plates: a crescent above a line of raised script and a lotus below, on a plain field." width="800" height="800">
   <figcaption>Circular seal of the three-leaf charter: lotus, crescent, and the legend <em>Sri Vishamasiddhi</em>. News photograph of a privately held plate (Ameet Lomte, Pune), read by ASI Director (Epigraphy) K. Munirathnam Reddy. Not an excavation of this site, and not a published plate edition.</figcaption>
 </figure>
 <figure class="plate">
@@ -89,22 +98,32 @@
       </ul>
     </nav>
     <p>The story stops on the morning of 15 August 1947. Andhra State, 1953, is beyond this site.</p>
-    <p>kumturu.com · kumuturu.com · Written for Guntur people. Nothing here is invented.</p>
+    <p>kumturu.com · kumuturu.com · A public history of Guntur, India. Nothing here is invented.</p>
   </div>
 </footer>
   <script>
-    document.querySelectorAll(".film-frame video").forEach(function (video) {
-      var hide = function () { video.classList.remove("is-ready"); };
-      video.addEventListener("loadeddata", function () {
-        if (video.readyState >= 2 && video.videoWidth) video.classList.add("is-ready");
+    (function () {
+      var KEY = "kumturu-lang";
+      var here = document.documentElement.lang === "te" ? "te" : "en";
+      document.querySelectorAll("[data-set-lang]").forEach(function (a) {
+        a.addEventListener("click", function () {
+          try { localStorage.setItem(KEY, a.getAttribute("data-set-lang")); } catch (e) {}
+        });
       });
-      video.addEventListener("error", hide);
-      video.querySelectorAll("source").forEach(function (source) {
-        source.addEventListener("error", hide);
-      });
-      var play = video.play();
-      if (play && play.catch) play.catch(function () {});
-    });
+      try {
+        var pref = localStorage.getItem(KEY);
+        if (pref && (pref === "en" || pref === "te") && pref !== here) {
+          var dest = document.querySelector('[data-set-lang="' + pref + '"]');
+          if (dest) {
+            var href = dest.getAttribute("href");
+            if (href && !sessionStorage.getItem("kumturu-lang-applied")) {
+              sessionStorage.setItem("kumturu-lang-applied", "1");
+              location.replace(href);
+            }
+          }
+        }
+      } catch (e) {}
+    })();
   </script>
 </body>
 </html>
