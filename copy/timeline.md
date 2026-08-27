@@ -63,6 +63,7 @@ A single table of dated claims, from the first tools on this Deccan to the morni
 | 1823 | Nizam’s remaining Circar claims bought outright. |
 | 31 July 1842 | J. C. F. Heyer reaches Guntur, invited by Collector Henry Stokes (Collector 1842–1852). |
 | 1852–1855 | Krishna anicut and canals, after Court of Directors approval on 5 January 1850. |
+| 1854 | Pharoah & Co. map of the District of Guntoor (J. & C. Walker, plate 23). Older Guntoor / Kistna survey sheet; shown on [To Independence](independence.html#guntoor-1854). |
 | 1859 | Guntur district abolished; territory divided between Krishna and Godavari. |
 | 1866 | Guntur municipality constituted. First elected body, 1881. II-Grade 1891; I-Grade 1917. |
 | 29 November 1883 | Anna Sarah Kugler reaches Guntur. Medical appointment, December 1885. Dispensary, February 1893. |

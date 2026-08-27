@@ -187,6 +187,7 @@ A single table of dated claims, from the first tools on this Deccan to the morni
 | 1823 | Nizam’s remaining Circar claims bought outright. |
 | 31 July 1842 | J. C. F. Heyer reaches Guntur, invited by Collector Henry Stokes (Collector 1842–1852). |
 | 1852–1855 | Krishna anicut and canals, after Court of Directors approval on 5 January 1850. |
+| 1854 | Pharoah & Co. map of the District of Guntoor (J. & C. Walker, plate 23). Older Guntoor / Kistna survey sheet; shown on [To Independence](independence.html#guntoor-1854). |
 | 1859 | Guntur district abolished; territory divided between Krishna and Godavari. |
 | 1866 | Guntur municipality constituted. First elected body, 1881. II-Grade 1891; I-Grade 1917. |
 | 29 November 1883 | Anna Sarah Kugler reaches Guntur. Medical appointment, December 1885. Dispensary, February 1893. |
@@ -444,6 +445,11 @@ Henry Stokes was Collector and Magistrate from **1842 to 1852**. He is the offic
 
 The district was reconstituted on **1 October 1904**, headquarters again at Guntur, by taking from old Krishna the taluks of Tenali, Bapatla, Guntur, Sattenapalli, Narasaraopet, Vinukonda and Palnadu, and from Nellore the Ongole taluk. The 1911 Britannica gives the new district’s area as 5,733 square miles and the population on that area in 1901 as **1,490,635**. On **1 July 1909** Tenali taluk was split into Tenali and Repalle.
 
+<figure class="plate" id="guntoor-1854">
+  <img src="media/guntoor-1854.jpg" alt="1854 engraved map titled District of Guntoor, by Pharoah and Co. Madras, plate 23, showing the older Guntoor district along the Kistna River." width="600" height="735">
+  <figcaption>Pharoah &amp; Co., Madras, 1854. District of Guntoor. Engraved by J. &amp; C. Walker. <em>Atlas of the Southern Part of India</em>, plate 23. This is the older Guntoor / Kistna survey sheet, not the 1904 reconstituted district. Public-domain map; scan via Geographicus.</figcaption>
+</figure>
+
 ## The town: municipality, cotton, water
 
 Keep both truths together. Guntur village is older than the French. The French, in the 1750s, made it a district seat. The British town and municipality came later.
@@ -595,6 +601,7 @@ Credit, first: the **Archaeological Survey of India** (Director, Epigraphy: K. M
 
 ## Gazetteers and encyclopaedias
 
+- 1854 Pharoah and Company map of the Guntur District (Guntoor), J. & C. Walker, Atlas of the Southern Part of India (Madras, 1854), plate 23. https://www.geographicus.com/P/AntiqueMap/districtguntoor-pharoah-1854
 - Gordon Mackenzie, *A Manual of the Kistna District in the Presidency of Madras* (Madras, 1883). https://archive.org/details/amanualkistnadi00mackgoog · https://archive.org/stream/amanualkistnadi00mackgoog/amanualkistnadi00mackgoog_djvu.txt
 - “Guntur,” *Encyclopaedia Britannica*, 11th ed., 1911. https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Guntur
 - “Circar,” *Encyclopaedia Britannica*, 11th ed., 1911. https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Circar
