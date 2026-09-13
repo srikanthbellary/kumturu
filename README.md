@@ -11,6 +11,6 @@ Static HTML on GitHub Pages (`main`, `/`). Story ends 15 August 1947.
 - Plate photographs: `media/plates-*.jpg` (do not replace)
 - Sada coins: `media/coin-*.jpg` (Bhandare 2016 photographs)
 - 1854 Pharoah & Co. District of Guntoor map: `media/guntoor-1854.jpg` (Internet Archive / CDL, atlasofsouthernp00phar, leaf 57, plate 23)
-- Still bands: `media/01-village-road.png`, `media/02-vengi-court.png`, `media/03-kondavidu.png`, `media/04-krishna-country.png`, `media/05-bhattiprolu.png`, `media/06-tenali-1942.png`. Impressions, not archive evidence. No video.
+- Still bands: `media/01-village-road.jpg`, `media/02-vengi-court.jpg`, `media/03-kondavidu.jpg`, `media/04-krishna-country.jpg`, `media/05-bhattiprolu.jpg`, `media/06-tenali-1942.jpg`. Impressions, not archive evidence. No video.
 
 Regenerate HTML from the copy with `python3 build_site.py`.
