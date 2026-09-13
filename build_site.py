@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 COPY = ROOT / "copy"
+SITE = "https://kumturu.com"
 
 NAV_EN = [
     ("index.html", "Home"),
@@ -150,12 +151,12 @@ LOCATOR_EN = "Guntur, Andhra Pradesh, India. South bank of the Krishna."
 LOCATOR_TE = "\u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41, Andhra Pradesh, India. South bank of the Krishna."
 
 STILLS = {
-    "village": ("media/01-village-road.png", "Bullock carts on a village road beside a tank and palms, a rocky hill beyond, in the Krishna country of Guntur, India."),
-    "vengi": ("media/02-vengi-court.png", "An impression of an Eastern Chalukya court at Vengi."),
-    "kondavidu": ("media/03-kondavidu.png", "An impression of the Kondavidu hill forts west of Guntur, India."),
-    "krishna": ("media/04-krishna-country.png", "An impression of Krishna-country river land on the south bank, Guntur, India."),
-    "bhattiprolu": ("media/05-bhattiprolu.png", "Brick stupa at Bhattiprolu among palms and paddy at low sun."),
-    "tenali": ("media/06-tenali-1942.png", "An impression of Tenali in 1942."),
+    "village": ("media/01-village-road.jpg", "Bullock carts on a village road beside a tank and palms, a rocky hill beyond, in the Krishna country of Guntur, India."),
+    "vengi": ("media/02-vengi-court.jpg", "An impression of an Eastern Chalukya court at Vengi."),
+    "kondavidu": ("media/03-kondavidu.jpg", "An impression of the Kondavidu hill forts west of Guntur, India."),
+    "krishna": ("media/04-krishna-country.jpg", "An impression of Krishna-country river land on the south bank, Guntur, India."),
+    "bhattiprolu": ("media/05-bhattiprolu.jpg", "Brick stupa at Bhattiprolu among palms and paddy at low sun."),
+    "tenali": ("media/06-tenali-1942.jpg", "An impression of Tenali in 1942."),
 }
 
 FILM_HEADINGS = {
@@ -533,19 +534,46 @@ def page_shell(meta: dict, body: str, extra_class: str = "", lang: str = "en") -
         body = body.replace(en_close, '<p class="closing">Welcome. The name is old. The river is older. The people were here before either was written down.</p>')
         body = body.replace(te_close, '<p class="closing">\u0c38\u0c4d\u0c35\u0c3e\u0c17\u0c24\u0c02. \u0c2a\u0c47\u0c30\u0c41 \u0c2a\u0c3e\u0c24\u0c26\u0c3f. \u0c28\u0c26\u0c3f \u0c2a\u0c3e\u0c24\u0c26\u0c3f. \u0c0f\u0c26\u0c48\u0c28\u0c3e \u0c35\u0c4d\u0c30\u0c3e\u0c2f\u0c2c\u0c21\u0c1f\u0c3e\u0c28\u0c3f\u0c15\u0c3f \u0c2e\u0c41\u0c02\u0c26\u0c41 \u0c2a\u0c4d\u0c30\u0c1c\u0c32\u0c41 \u0c07\u0c15\u0c4d\u0c15\u0c21 \u0c09\u0c28\u0c4d\u0c28\u0c3e\u0c30\u0c41.</p>')
 
-    alt_en = f"https://kumturu.com/{'' if leaf == 'index.html' else leaf}"
-    alt_te = f"https://kumturu.com/te/{'' if leaf == 'index.html' else leaf}"
+    alt_en = f"{SITE}/{'' if leaf == 'index.html' else leaf}"
+    alt_te = f"{SITE}/te/{'' if leaf == 'index.html' else leaf}"
+    page_url = f"{SITE}/{canon}"
+    og_locale = "te_IN" if lang == "te" else "en_IN"
+    og_alt_locale = "en_IN" if lang == "te" else "te_IN"
+    og_image = f"{SITE}/media/og.jpg"
+    og_image_alt = STILLS["krishna"][1]
+    title = html.escape(meta["title"])
+    description = html.escape(meta["description"])
 
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{html.escape(meta["title"])}</title>
-  <meta name="description" content="{html.escape(meta["description"])}">
-  <link rel="canonical" href="https://kumturu.com/{canon}">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{page_url}">
   <link rel="alternate" hreflang="en" href="{alt_en}">
   <link rel="alternate" hreflang="te" href="{alt_te}">
+  <link rel="alternate" hreflang="x-default" href="{alt_en}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kumturu">
+  <meta property="og:locale" content="{og_locale}">
+  <meta property="og:locale:alternate" content="{og_alt_locale}">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{page_url}">
+  <meta property="og:image" content="{og_image}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{html.escape(og_image_alt)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="{og_image}">
   <link rel="stylesheet" href="{css}">
 </head>
 <body>
@@ -605,9 +633,44 @@ def build_lang(pages: dict, copy_dir: Path, lang: str) -> None:
         print("wrote", dest.relative_to(ROOT))
 
 
+def page_abs_url(out: str) -> str:
+    if out == "index.html":
+        return f"{SITE}/"
+    if out == "te/index.html":
+        return f"{SITE}/te/"
+    return f"{SITE}/{out}"
+
+
+def write_sitemap() -> None:
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ]
+    for md_name, meta_en in PAGES_EN.items():
+        en = page_abs_url(meta_en["out"])
+        te = page_abs_url(PAGES_TE[md_name]["out"])
+        for loc in (en, te):
+            lines.extend(
+                [
+                    "  <url>",
+                    f"    <loc>{loc}</loc>",
+                    f'    <xhtml:link rel="alternate" hreflang="en" href="{en}"/>',
+                    f'    <xhtml:link rel="alternate" hreflang="te" href="{te}"/>',
+                    f'    <xhtml:link rel="alternate" hreflang="x-default" href="{en}"/>',
+                    "  </url>",
+                ]
+            )
+    lines.append("</urlset>")
+    dest = ROOT / "sitemap.xml"
+    dest.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print("wrote", dest.relative_to(ROOT))
+
+
 def main() -> None:
     build_lang(PAGES_EN, COPY, "en")
     build_lang(PAGES_TE, COPY / "te", "te")
+    write_sitemap()
 
 
 if __name__ == "__main__":
